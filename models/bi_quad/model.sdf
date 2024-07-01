@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+	<model name="bi_quad">
+		<link name="base">
+			<self_collide>false</self_collide>
+			<pose>0.1993142586531725 0.0007662019443860381 0.007308524084885006 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>1.9525751921458985</mass>
+				<inertia>
+					<ixx>0.05420753138479871</ixx>
+					<ixy>0.0001177924686405842</ixy>
+					<ixz>6.837947817375323e-06</ixz>
+					<iyy>0.0038734227472525962</iyy>
+					<iyz>5.313259938331419e-05</iyz>
+					<izz>0.05205338074297329</izz>
+				</inertia>
+			</inertial>
+			<collision name="base_collision">
+				<geometry>
+					<mesh>
+						<uri>model://bi_quad/meshes/CAD/base.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="base_visual">
+				<geometry>
+					<mesh>
+						<uri>model://bi_quad/meshes/CAD/base.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="left_tilt">
+			<self_collide>false</self_collide>
+			<pose>0.1970802016271777 0.20867943375924966 0.0903633202468961 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.11178225346146682</mass>
+				<inertia>
+					<ixx>4.599569507079622e-05</ixx>
+					<ixy>3.4183955813915646e-08</ixy>
+					<ixz>1.3992897841678344e-06</ixz>
+					<iyy>3.055340095657755e-05</iyy>
+					<iyz>-4.072897203190706e-07</iyz>
+					<izz>2.7747241743645647e-05</izz>
+				</inertia>
+			</inertial>
+			<collision name="left_tilt_collision">
+				<geometry>
+					<mesh>
+						<uri>model://bi_quad/meshes/CAD/left_tilt.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="left_tilt_visual">
+				<geometry>
+					<mesh>
+						<uri>model://bi_quad/meshes/CAD/left_tilt.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="right_tilt">
+			<self_collide>false</self_collide>
+			<pose>0.1988358901875466 -0.20757372230526244 0.09038961426123086 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.11178225346146678</mass>
+				<inertia>
+					<ixx>4.605310565699767e-05</ixx>
+					<ixy>1.4271970499635245e-09</ixy>
+					<ixz>6.437483614664786e-07</ixz>
+					<iyy>3.0533776883067535e-05</iyy>
+					<iyz>-4.153988905954975e-08</iyz>
+					<izz>2.7648072299791693e-05</izz>
+				</inertia>
+			</inertial>
+			<collision name="right_tilt_collision">
+				<geometry>
+					<mesh>
+						<uri>model://bi_quad/meshes/CAD/right_tilt.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="right_tilt_visual">
+				<geometry>
+					<mesh>
+						<uri>model://bi_quad/meshes/CAD/right_tilt.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="left_joint" type="revolute">
+			<parent>base</parent>
+			<child>left_tilt</child>
+			<pose>0.0016285265354841272 -0.021312948760055832 -0.026363320246896197 0 0 0</pose>
+			<axis>
+				<xyz>4.926614671774132e-15 -1.0000000000000013 -5.545453557153425e-17</xyz>
+				<limit>
+					<lower>-0.7853981633974483</lower>
+					<upper>0.7853981633974483</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="right_joint" type="revolute">
+			<parent>base</parent>
+			<child>right_tilt</child>
+			<pose>0.0010467769884695954 -0.021032214828628142 -0.026389614261231122 0 0 0</pose>
+			<axis>
+				<xyz>4.9404924595819466e-15 -1.000000000000001 -5.549181640493362e-17</xyz>
+				<limit>
+					<lower>0.0</lower>
+					<upper>0.0</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+	</model>
+</sdf>
